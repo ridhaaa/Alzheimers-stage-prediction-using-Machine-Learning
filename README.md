@@ -1,6 +1,7 @@
 # Alzheimers-stage-prediction-using-Machine-Learning
 
 -----ABOUT THE PROJECT-----
+
 This is an ML project to detect stages of Alzheimer's disease using an MRI image. Performance of 3 algorithms are calculated and Random Forest had a dominant accuracy score among the three.
 Hence Random Forest algorithm is used to predict the disease stage. A dataset of about 5000 MRI images were taken from Kaggle website. Python libraries were used for accuracy calculation and prediction. This works in a website with 3 main modules - admin, neurologist and caretaker. Caretaker is responsible of the patients and can manage doctor appointments along with getting disease results. Hope you will check out the website :)
 
