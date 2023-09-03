@@ -1,0 +1,46 @@
+{% extends 'caretaker/indexnew.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="" enctype="multipart/form-data">
+  <table class="table table-active">
+    <tr>
+      <th width="96" scope="col">Photo</th>
+    </tr>
+    <tr>
+
+      <td><input type = "file" name="photo" required/> </td>
+    </tr>
+    <tr>
+      <th colspan="4" scope="row"><div align="center">
+        <input type="submit" name="button" id="button" value="Upload" />
+      </div></th>
+    </tr>
+  </table>
+
+<div align="center">
+    {% if data=='MildDemented' %}
+        <h4><font color="red" size="50">Detected</font></h4><h2><font color="black">Stage:</font><font color="#9acd32">{{ data }}</font></h2>
+    {% elif data=='ModerateDemented' %}
+                <h4><font color="red" size="50">Detected</font></h4><h2><font color="black">Stage:</font><font color="red">{{ data }}</font></h2>
+    {% elif data=='NonDemented' %}
+                        <h4><font color="#006400" size="50">Not Detected</font></h4>
+{#        <h2><font color="black">Stage:</font><font color="#7fffd4">{{ data }}</font></h2>#}
+    {% elif data=='VeryMildDemented' %}
+                                <h4><font color="red" size="50">Detected</font></h4><h2><font color="black">Stage:</font><font color="#adff2f">{{ data }}</font></h2>
+    {% else %}
+                                        <h4><font color="black" size="50">Please Upload a valid Image </font></h4>
+
+    {% endif %}
+
+
+</div>
+</body>
+</html>
+{% endblock %}

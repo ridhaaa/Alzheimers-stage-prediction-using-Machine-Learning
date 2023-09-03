@@ -1,0 +1,45 @@
+{% extends 'neurologist1/indexnew.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-active">
+    <tr>
+      <th scope="row">Tips</th>
+      <td><label for="textarea"></label>
+      <textarea name="tips" id="tips" cols="45" rows="5" class="form-control"></textarea></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><div align="center">
+        <input type="submit" name="button" id="button" value="ADD" />
+      </div></th>
+    </tr>
+  </table>
+</form>
+<br>
+<form id="form2" name="form2" method="post" action="">
+    <table class="table table-active">
+
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Tip</th>
+        <th></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i.tip }}</td>
+      <td><a href="/delete_tips/{{ i.tip_id}}" onclick="return confirm('Are you sure?')">Remove</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

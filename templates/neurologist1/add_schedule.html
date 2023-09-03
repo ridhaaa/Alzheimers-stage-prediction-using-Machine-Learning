@@ -1,0 +1,57 @@
+{% extends 'neurologist1/indexnew.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <table class="table table-active">
+
+    <tr>
+      <th width="120" scope="row"><div align="left">Date</div></th>
+      <td><input type="date" name="dates" id="dates" /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">F_time</div></th>
+      <td>&nbsp;<input type="time" name="ftime" id="ftime" /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">To_time</div></th>
+      <td><input type="time" name="totime" id="totime" />&nbsp;</td>
+    </tr>
+     <tr>
+      <th colspan="2" scope="row"><div align="center">
+        <input type="submit" name="button" id="button" value="ADD" class="btn btn-light"/>
+      </div></th>
+    </tr>
+  </table>
+</form>
+<br>
+<form id="form2" name="form2" method="post" action="">
+    <table class="table table-active">
+
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Date</th>
+        <th scope="col">From</th>
+      <th scope="col">To</th>
+        <th></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i.dates }}</td>
+        <td>&nbsp;{{ i.f_time }}</td>
+        <td>&nbsp;{{ i.to_time }}</td>
+      <td><a href="/delete_schedule/{{ i.s_id}}" onclick="return confirm('Are you sure?')">Remove</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'neurologist1/indexnew.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="" method="get">
+<table class="table table-active">
+  <tr>
+    <th width="40" scope="col">S.No</th>
+      <th width="90" scope="col">Caretaker</th>
+      <th width="90" scope="col">Patient</th>
+    <th width="41" scope="col">Date</th>
+    <th width="58" scope="col">F_time</th>
+    <th width="90" scope="col">To_time</th>
+
+  </tr>
+  {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+         <td>&nbsp;{{ i.c_name }}</td>
+         <td>&nbsp;{{ i.uname }}</td>
+      <td>&nbsp;{{ i.dates }}</td>
+      <td> {{ i.f_time }}</td>
+      <td>&nbsp;{{ i.to_time }}</td>
+    <td> <a href="/exercise/{{ i.app_id  }}#aaa"> Suggest Exercise</a> </td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+
+
+</body>
+</html>{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'caretaker/indexnew.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="" enctype="multipart/form-data">
+  <table class="table table-active">
+    <tr>
+      <th width="42" scope="col">Person_name</th>
+      <th width="96" scope="col">Photo</th>
+      <th width="96" scope="col">Relation</th>
+    </tr>
+    <tr>
+      <td><input type = "text" name="name" required/> </td>
+      <td><input type = "file" name="photo" required/> </td>
+      <td><input type = "text" name="relation" required /> </td>
+    </tr>
+    <tr>
+      <th colspan="4" scope="row"><div align="center">
+        <input type="submit" name="button" id="button" value="ADD" />
+      </div></th>
+    </tr>
+
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
